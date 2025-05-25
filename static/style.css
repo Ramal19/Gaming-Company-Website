@@ -90,6 +90,8 @@ nav > .menu-icon {
   font-size: 30px;
   color: #fff;
   cursor: pointer;
+  padding : 10px;
+  background-color: #da392b;
 }
 
 header > .header-text {
