@@ -85,9 +85,13 @@ li > a:nth-child(5){
   border-radius: 0px 0px 15px 0px;
 }
 
-nav > .menu-icon {
+nav > #menu-icon {
   display: none;
-  
+  font-size: 30px;
+  color: #fff;
+  cursor: pointer;
+  padding : 10px;
+  background-color: #da392b;
 }
 
 header > .header-text {
@@ -337,13 +341,8 @@ header > .header-text {
     font-size: 10px;
   }
 
-  nav > ,.menu-icon {
+  nav > #menu-icon {
     display: flex;
-    font-size: 30px;
-    color: #fff;
-    cursor: pointer;
-    padding : 10px;
-    background-color: #da392b;
   }
 
   nav > ul {
