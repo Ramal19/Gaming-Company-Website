@@ -1,0 +1,349 @@
+
+*{
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+
+
+header {
+
+  width: 100%;
+  height: 800px;
+  background-image: url("../Photo/header-photo.jpg");
+  position: relative;
+}
+
+header > nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 120px;
+  background-color: transparent;
+  position: fixed;
+  z-index: 1;
+  transform: translateY(-50px);
+  animation: slideDown 1s ease-out forwards;
+  padding: 0;
+  transition: all 0.5s ease;
+}
+
+@keyframes slideDown {
+  to {
+    transform: translateY(0);
+    }
+}
+
+
+nav > .logo {
+  font-size: 26px;
+  color: #fff;
+  background-color: #da392b;
+  font-weight: 400;
+  padding: 10px 20px;
+  border-radius: 0px 0px 15px 15px;
+  margin-top: -11px;
+}
+
+nav > ul {
+
+  list-style-type: none;
+  display: flex;
+}
+
+ul > li {
+  display: flex;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 15px 15px;
+}
+
+li > a{
+  padding: 20px 30px;
+  text-decoration: none;
+  color: #000;
+  background-color: #fff;
+  font-weight: 400;
+  font-size: 16px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+li > a:hover{
+  background-color: #da392b;
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+
+li > a:nth-child(1){
+  background-color: #da392b;
+  border-radius: 0px 0px 0px 15px;
+  color: #fff;
+}
+
+li > a:nth-child(5){
+  border-radius: 0px 0px 15px 0px;
+}
+
+header > .header-text {
+  position: absolute;
+  top: 35%;
+  left: 23%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 40px;
+  font-weight: 400px;
+  display: flex;
+  flex-direction: column;
+  line-height: 4rem;
+  align-items: flex-start;
+  font-family: "IBM Plex Sans", sans-serif;
+  opacity: 0;
+  animation: fadeIN 2s ease-in-out forwards;
+  animation-delay: 1s;
+}
+
+@keyframes fadeIN {
+  to {
+    opacity: 1;
+  }
+}
+
+
+.header-text > .header-links {
+  display: flex;
+  gap: 20px;
+}
+
+
+.cards {
+
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 50px 0px;
+}
+
+.cards > .card-one, .card-two, .card-three ,.card-four {
+  width: 300px;
+  height: 400px;
+  background-color: #fff;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  position: relative;
+}
+
+.cards > .card-four {
+
+  background: #22C1C3;
+  background: linear-gradient(0deg, rgba(34, 193, 195, 1) 0%, rgba(253, 187, 45, 1) 100%);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cards > .card-four > h1 {
+
+  width: 200px;
+  text-align: center;
+  font-size: 32px;
+  color: #612b3b;
+}
+
+.cards > .card-four > span {
+
+  font-size: 40px;
+  color: #612b3b;
+}
+
+.card-one > img{
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  transition: all 1s ease-in-out;
+}
+
+.card-two > img{
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  transition: all 1s ease-in-out;
+}
+.card-two:hover img{
+  transform: scale(1.15);
+}
+.card-three > img{
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  transition: all 1s ease;
+
+}
+.card-three:hover img{
+  transform: scale(1.15);
+}
+
+/* CARD TEXT */
+
+/* CARD-ONE */
+
+.cards > .card-one > .shadow {
+  position: absolute;
+  box-shadow: #612b3b 0px -150px 350px -28px inset;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  transition: all 1.5s ease;
+}
+
+.cards > .card-one > .card-text {
+
+  color: #fff;
+  position: absolute;
+  padding: 20px;
+  bottom: 0px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  transition: all 1.5s ease;
+}
+
+.card-one:hover img{
+  transform: scale(1.15);
+}
+
+.card-one:hover > .shadow {
+  display: none;
+}
+
+.card-one:hover > .card-text {
+  display: none;
+}
+
+/* CARD-TWO */
+
+.cards > .card-two > .shadow {
+  position: absolute;
+  box-shadow: #612b3b 0px -250px 150px -28px inset;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  transition: all 4s ease;
+}
+
+.cards > .card-two > .card-text {
+
+  color: #fff;
+  position: absolute;
+  padding: 20px;
+  bottom: 0px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  transition: all 4s ease;
+}
+
+.card-two:hover img{
+  transform: scale(1.15);
+}
+
+.card-two:hover > .shadow {
+  display: none;
+}
+
+.card-two:hover > .card-text {
+  display: none;
+}
+
+/* CARD-THREE */
+
+.cards > .card-three > .shadow {
+  position: absolute;
+  box-shadow: #612b3b 0px -250px 150px -28px inset;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  transition: all 0.5s ease;
+}
+
+.cards > .card-three > .card-text {
+
+  color: #fff;
+  position: absolute;
+  padding: 20px;
+  bottom: 0px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  transition: all 0.5s ease;
+}
+
+.card-three:hover img{
+  transform: scale(1.15);
+}
+
+.card-three:hover > .shadow {
+  display: none;
+}
+
+.card-three:hover > .card-text {
+  display: none;
+}
+
+
+
+/* SECTION-TWO*/
+
+.section-two {
+
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.section-two > .heading-text {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  padding: 50px 100px;
+  text-align: center;
+  font-size: 20px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+
+@media (max-width: 600px) {
+
+  .cards {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  header > .header-text {
+    left: 40%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 1100px) {
+
+  .cards {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+   header > .header-text {
+    left: 40%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 30px;
+  }
+}
