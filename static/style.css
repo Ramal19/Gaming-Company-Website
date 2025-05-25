@@ -85,6 +85,13 @@ li > a:nth-child(5){
   border-radius: 0px 0px 15px 0px;
 }
 
+nav > .menu-icon {
+  display: none;
+  font-size: 30px;
+  color: #fff;
+  cursor: pointer;
+}
+
 header > .header-text {
   position: absolute;
   top: 35%;
@@ -331,6 +338,15 @@ header > .header-text {
     text-align: center;
     font-size: 10px;
   }
+
+  nav > ,.menu-icon {
+    display: flex;
+  }
+
+  nav > ul {
+    display: none;
+  }
+  
 }
 
 @media (max-width: 1100px) {
