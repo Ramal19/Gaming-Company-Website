@@ -5,9 +5,10 @@ let topButton = null;
 let cardsSection = document.querySelector(".card-three");
 let menuButton = document.querySelector(".menu-button");
 let isMenuOpen = null;
+let scrollPosition = window.scrollY;
 
 window.addEventListener('scroll', () => {
-    (window.scrollY > 800) ? navBar.style.display = "none" : navBar.style.display = "flex";
+    (window.scrollY > scrollPosition) ? navBar.style.display = "none" : navBar.style.display = "flex";
 
     if (window.scrollY > 0) {
         if (!topButton) {
@@ -23,8 +24,6 @@ window.addEventListener('scroll', () => {
         topButton.remove();
         topButton = null;
     }
-
-    console.log(window.scrollY, window.innerHeight);
 
 });
 
