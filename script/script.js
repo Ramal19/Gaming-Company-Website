@@ -4,11 +4,13 @@ let header = document.querySelector("header");
 let topButton = null;
 let cardsSection = document.querySelector(".card-three");
 let menuButton = document.querySelector(".menu-button");
-let isMenuOpen = null;
-let scrollPosition = window.scrollY;
+let menuElement = null;
+let lastScrollPosition = window.scrollY;
 
 window.addEventListener('scroll', () => {
-    (window.scrollY > scrollPosition) ? navBar.style.display = "none" : navBar.style.display = "flex";
+    let currentScrollPosition = window.scrollY;
+    (currentScrollPosition > lastScrollPosition) ? navBar.style.display = "none" : navBar.style.display = "flex";
+    lastScrollPosition = currentScrollPosition;
 
     if (window.scrollY > 0) {
         if (!topButton) {
@@ -20,11 +22,12 @@ window.addEventListener('scroll', () => {
                 window.scrollTo({ top: 0, behavior: "smooth" });
             });
         }
-    } else if (topButton && window.scrollY === 0) {
-        topButton.remove();
-        topButton = null;
+    } else {
+        if (topButton && window.scrollY === 0) {
+            topButton.remove();
+            topButton = null;
+        }
     }
-
 });
 
 downloadButton.addEventListener('click', () => {
@@ -33,10 +36,10 @@ downloadButton.addEventListener('click', () => {
 if (menuButton) {
     menuButton.addEventListener('click', () => {
         document.body.style.overflow = "hidden";
-        if (!isMenuOpen) {
-            isMenuOpen = document.createElement("div");
-            isMenuOpen.classList.add("menu-open");
-            isMenuOpen.innerHTML = `
+        if (!menuElement) {
+            menuElement = document.createElement("div");
+            menuElement.classList.add("menu-open");
+            menuElement.innerHTML = `
                 <button class="close-menu-button"><i class="bi bi-x"></i></button>
                 <ul>
                     <li><a href="#home">Home</a></li>
@@ -46,19 +49,19 @@ if (menuButton) {
                 </ul>
             `;
 
-            header.appendChild(isMenuOpen);
-            let closeMenuButton = isMenuOpen.querySelector(".close-menu-button");
+            header.appendChild(menuElement);
+            let closeMenuButton = menuElement.querySelector(".close-menu-button");
             closeMenuButton.addEventListener('click', () => {
-                isMenuOpen.remove();
-                isMenuOpen = null;
+                menuElement.remove();
+                menuElement = null;
                 document.body.style.overflow = "auto";
             });
 
-            let menuLinks = isMenuOpen.querySelectorAll("a");
+            let menuLinks = menuElement.querySelectorAll("a");
             menuLinks.forEach(link => {
                 link.addEventListener('click', () => {
-                    isMenuOpen.remove();
-                    isMenuOpen = null;
+                    menuElement.remove();
+                    menuElement = null;
                     document.body.style.overflow = "auto";
                 })
             })
