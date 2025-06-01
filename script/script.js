@@ -2,6 +2,7 @@ let navBar = document.querySelector(".navbar");
 let downloadButton = document.getElementById("download-button");
 let header = document.querySelector("header");
 let topButton = null;
+let cardsSection = document.querySelector(".card-three");
 
 window.addEventListener('scroll', () => {
     (window.scrollY > 800) ?  navBar.style.display = "none" : navBar.style.display = "flex";
@@ -20,8 +21,11 @@ window.addEventListener('scroll', () => {
         topButton.remove();
         topButton = null;
     }
+
+    console.log(window.scrollY, window.innerHeight);
+    
 });
 
 downloadButton.addEventListener('click', () => {
-    window.scrollTo({ top: 500, behavior: "smooth" });
+    cardsSection.scrollIntoView({ behavior: "smooth" });
 });
